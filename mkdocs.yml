@@ -1,0 +1,23 @@
+site_name: Research Wiki
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Daily Log:
+      - 2026:
+          - 2026-01-26: log/2026/2026-01-26.md
+  - Skills:
+      - Overview: skills/index.md
+      - EMag (Maxwell): skills/emag.md
+      - Mechanical (Stress): skills/mechanical.md
+      - Motor-CAD: skills/motorcad.md
+      - AI Workflow: skills/ai-workflow.md
+      - Experiments: skills/experiments.md
+  - Templates:
+      - Daily Log Template: templates/daily-log.md
