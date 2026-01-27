@@ -1,0 +1,23 @@
+/* docs/stylesheets/extra.css */
+:root {
+  --md-text-font: "Noto Sans KR", sans-serif;
+  --md-code-font: "JetBrains Mono", monospace;
+}
+
+/* 본문 폭을 조금 더 넓고 시원하게 */
+.md-grid {
+  max-width: 1200px;
+}
+
+/* 헤더 색상을 좀 더 감성적으로 (그라데이션) */
+.md-header {
+  background: linear-gradient(to right, #3f51b5, #5c6bc0);
+}
+
+/* 카드형 UI 느낌 추가 */
+.md-content__inner {
+  background-color: var(--md-bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
