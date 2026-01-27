@@ -1,23 +1,40 @@
-site_name: Research Wiki
+site_name: research-wiki
 theme:
   name: material
+  language: ko
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
     - search.suggest
     - search.highlight
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: 다크모드
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트모드
+  icon:
+    repo: fontawesome/brands/github
 
-nav:
-  - Home: index.md
-  - Daily Log:
-      - 2026:
-          - 2026-01-26: log/2026/2026-01-26.md
-  - Skills:
-      - Overview: skills/index.md
-      - EMag (Maxwell): skills/emag.md
-      - Mechanical (Stress): skills/mechanical.md
-      - Motor-CAD: skills/motorcad.md
-      - AI Workflow: skills/ai-workflow.md
-      - Experiments: skills/experiments.md
-  - Templates:
-      - Daily Log Template: templates/daily-log.md
+repo_url: https://github.com/<너아이디>/<레포이름>
+edit_uri: edit/main/docs/
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
