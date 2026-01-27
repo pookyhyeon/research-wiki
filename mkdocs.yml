@@ -1,4 +1,4 @@
-site_name: research-wiki
+site_name: Research Wiki
 theme:
   name: material
   language: ko
@@ -7,34 +7,61 @@ theme:
     - navigation.sections
     - navigation.top
     - navigation.indexes
+    - navigation.tracking # 현재 위치 표시
     - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
     - content.action.edit
+    - content.tabs.link # 탭 전환 동기화
   palette:
     - scheme: default
+      primary: indigo # 연구용으로 신뢰감 있는 색상
+      accent: indigo
       toggle:
         icon: material/weather-night
         name: 다크모드
     - scheme: slate
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/weather-sunny
         name: 라이트모드
   icon:
     repo: fontawesome/brands/github
 
-repo_url: https://github.com/<너아이디>/<레포이름>
-edit_uri: edit/main/docs/
-
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
+  - footnotes
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid # 다이어그램 지원
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.arithmatex: # 수식 지원 (중요!)
+      generic: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# 수식 렌더링을 위한 자바스크립트 추가
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+  # 네비게이션 설정: 폴더 내의 index.md가 있으면 해당 폴더의 대표 페이지가 돼
+nav:
+  - Home: index.md
+  - Daily Log: 
+      - log/index.md # 이 파일이 있으면 폴더 클릭 시 바로 보여
+      - log/2026/
+  - Skills Map: skills/
+  - Projects: projects/
+  - Literature: literature/
+  - Templates: templates/
